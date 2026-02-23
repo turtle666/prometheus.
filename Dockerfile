@@ -8,6 +8,6 @@ RUN mkdir -p /tmp/node_exporter && \
     chmod 777 /tmp/node_exporter
 
 # Set the entrypoint to run node_exporter with the textfile collector directory
-ENTRYPOINT ["/bin/node_exporter", "--collector.textfile.directory=/var/tmp/node_exporter"]
+ENTRYPOINT ["/bin/node_exporter", "--collector.textfile.directory=/tmp/node_exporter"]
 
 EXPOSE 9100
