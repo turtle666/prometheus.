@@ -1,4 +1,5 @@
 FROM prom/prometheus:latest  
-RUN rm /etc/prometheus/prometheus.yml  
-COPY prometheus.yml /etc/prometheus/prometheus.yml  
+RUN rm -f /etc/prometheus/prometheus.yml  
+COPY prometheus.yml /prometheus.yml  
 EXPOSE 9090  
+CMD ["--config.file=/prometheus.yml", "--storage.tsdb.path=/prometheus"]  
